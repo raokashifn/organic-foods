@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+	<!-- main menu stylesheet -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- shop page stylesheet -->
+	<link rel="stylesheet" href="assets/css/shop.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/navbar.css">
+	<!-- footer css -->
+	<link rel="stylesheet" href="assets/css/footer.css">
+
+</head>
+<body>
+	
+	
+    <!-- <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+     -->
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-right">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="/">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class=""><a href="/">Home</a></li>
+								
+								<li><a href="">Sell</a>
+									<ul class="sub-menu">
+										<li><a href="">why sell here</a></li>
+										<li><a href="/auth">Login</a></li>
+								    </ul>
+								</li>
+								<li><a href="/blogs">Blog</a></li>
+	
+								<li><a href="#">About</a></li>
+								
+								<li><a href="/shop">Shop</a></li>
+								<!-- <li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li> -->
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	<!-- search area -->
+	<!-- <div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!-- end search arewa -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Fresh and Organic</p>
+						<h1>List of Multiple products</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+	<div class="product-section mt-100 mb-150">
+		<div class="container">
+			<div class="row">
+				
+					<div class="section-title ">	
+						<div class="containe">
+							<a target="_blank"  class="pp"> All</a>
+							<a target="_blank"  class="pp">Fruit</a>
+							<a target="_blank"  class="pp">Vegetable</a>
+						  </div>
+					</div>
+				
+			</div>
+
+
+
+
+			<div class="row">
+				<%products.forEach((product)=>{%>
+				<div class="col-lg-3 col-md-4 col-sm-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="#"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+							<!-- <a href="single-product.html"><img src="<%=product.imgSrc%>" alt=""></a> -->
+						</div>
+						<h3 class="product-name"><%=product.name%></h3>
+						<p class="product-price"><span>Per Kg</span>Rs <%=product.price%>  </p>
+						<!-- <p class="product-price"><span>Seller</span> <%=product.sellerName%> </p> -->
+						<a target="_blank"  class="cart-btn contact-seller-btn"><i class="fas fa-shopping-cart"></i> contact seller</a>
+						
+					</div>
+				</div>		
+				
+				<%});%>
+				
+			</div>
+		</div>
+	</div>
+	<!-- end products -->
+
+	 <!-- Footer Start -->
+	 <footer class="footer">
+		<div class="container-fluid">
+		  <div class="row" style="min-height: 80vh;">
+			<div class="col-sm footer_col background-gray" >
+	
+			  <form class="row g-3" action="/api/admin/messages" method="post">
+				<h3>Contact Us</h3>
+				<div class="col-sm-12">
+				  <label class="form-label">Name</label>
+				  <input type="text" name="name"  placeholder="Phone or Email.." class="form-control" id="inputEmail4">
+				</div>
+				<div class="col-sm-12">
+				  <label  class="form-label">Email</label>
+				  <input type="email" name="email" placeholder="Address..." class="form-control" id="inputPassword4">
+				</div>
+				
+				<div class="col-sm-12">
+				  <label  class="form-label">Message</label>
+				  <textarea class="form-control"  name="message" rows="3" placeholder="Write your Query Here.."></textarea>
+				</div>
+				
+				<div class="col-md-6 py-4">
+				  <button type="submit" class="btn" style="background-color: rgb(180, 218, 13); color: white;">Send</button>
+				</div>
+			  </form>
+			</div>
+			<div class="col-sm footer_col background-gray" >
+			  <div class="row footer_links">
+				<div class="col-md col-6 ">
+				  <h3> Site_Links</h3>
+				  <ul class="footer_ul">
+				  
+				  <li><a href="#">Home_Page</a></li>
+				  <li><a href="#">Shop</a></li>
+				  <li><a href="#">Login</a></li>
+				  <li><a href="#">Blog</a></li>
+				  
+				 </ul>
+				</div>
+				<div class="col-md col-6 ">
+				  <h3>Social_Links</h3>
+				  <ul class="footer_ul">
+				  
+				  <li><a href="#">@Facebook</a></li>
+				  <li><a href="#">Company_Whattsp</a></li>
+				  <li><a href="#">@Twitter</a></li>
+				  <li><a href="#">@instagram</a></li>
+				  
+				 </ul>
+				</div>
+			  </div>
+			  <p style="color:rgb(180, 218, 13); letter-spacing: 3px;padding-top: 40px;">"Explore our world of possibilities."</p>
+		   
+			 
+			</div>
+		   
+		  </div>
+		  
+		</div>
+	   
+	  </footer>
+	  <div class="container-fluid text-center py-3 " style="color: rgb(54, 61, 23);" >&copy; Copyright 2023 Organic Foods.</footer>
+	  </div>
+
+
+	  <!-- Footer End -->
+
+	
+	<script>
+		const contactSellerButton = document.querySelector('.contact-seller-btn');
+contactSellerButton.addEventListener('click', () => {
+  const sellerWhatsAppNumber = "923017275499"; // Replace with the actual seller's WhatsApp number
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${sellerWhatsAppNumber}`;
+  window.open(whatsappUrl);
+});
+	</script>
+
+	
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>

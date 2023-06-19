@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "884131f0-6046-4f48-80bb-8b18d72bda8b",
+		"name": "Farmer",
+		"description": "server request bundle for API request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "View products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ahsan Ali",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2500",
+									"type": "text"
+								},
+								{
+									"key": "bulkQty",
+									"value": "60kg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fresh fruits mix bundle call at #003355675 for more info",
+									"type": "text"
+								},
+								{
+									"key": "sellerName",
+									"value": "Ali Ahsan ",
+									"type": "text"
+								},
+								{
+									"key": "imgSrc",
+									"value": "img-link",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ahsan Ali",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50000",
+									"type": "text"
+								},
+								{
+									"key": "bulkQty",
+									"value": "10kg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fresh fruits mix bundle call at #003355675 for more info",
+									"type": "text"
+								},
+								{
+									"key": "sellerName",
+									"value": "Ali Ahsan new",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "imgSrc",
+									"value": "img-link",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "642f81eb5f21b304fae88cd8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "642f88f97fb2e98cb6de6b6f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				}
+			],
+			"description": "It contains all apis related to Products"
+		},
+		{
+			"name": "messages",
+			"item": [
+				{
+					"name": "View messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"messages",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Add message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "John doe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "john@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Had great experience buying product form this seller!",
+									"type": "text"
+								},
+								{
+									"key": "sellerName",
+									"value": "Ali",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"messages",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete message",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "642f88ac7fb2e98cb6de6b69",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"messages",
+								""
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				}
+			],
+			"description": "It contains API related to all user messages, complaints or feedback!"
+		},
+		{
+			"name": "blogs",
+			"item": [
+				{
+					"name": "View blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"blog"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Add blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Fruits and vegetable house",
+									"type": "text"
+								},
+								{
+									"key": "intro_text",
+									"value": "New product launched!",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is some interesting details about this new product everyone is talking about",
+									"type": "text"
+								},
+								{
+									"key": "imgSrc",
+									"value": "img-link",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"blog"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "643244c132c0e69b45733364",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"blog"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "update blog",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Fruits and vegetable Free",
+									"type": "text"
+								},
+								{
+									"key": "intro_text",
+									"value": "New product launched!",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is some interesting details about this new product everyone is talking about",
+									"type": "text"
+								},
+								{
+									"key": "imgSrc",
+									"value": "img-link",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "6432443c32c0e69b4573335f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"blog"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				}
+			],
+			"description": "Contains API related to blog crud operations\r\nrequires admin auth"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "abq",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "00000000000",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello",
+									"type": "text"
+								},
+								{
+									"key": "imgSrc",
+									"value": "'img-link'",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "ePassword",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/seller/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"seller",
+								"register"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "login seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "00000000000",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/seller/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"seller",
+								"login"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				},
+				{
+					"name": "logout seller",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/seller/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"seller",
+								"logout"
+							]
+						},
+						"description": "This gets the list of all products!"
+					},
+					"response": []
+				}
+			],
+			"description": "Deals with the authentication of sellers and admin!"
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "get seller profile data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "6432438a654f290d1d436b13",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/profile/?id=6432438a654f290d1d436b13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"profile",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6432438a654f290d1d436b13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit seller profile data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "6432438a654f290d1d436b13",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Abdul Quddus",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "03339999991",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/profile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"profile",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6432438a654f290d1d436b13",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Allows sellers to edit their profile and details about their business!"
+		}
+	]
+}

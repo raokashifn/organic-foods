@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration</title>
+      <link rel="stylesheet" href="/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div >
+            <h2 style="text-align: center;">Sign In</h2>
+         </div>
+         <!-- <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div> -->
+            <div class="form-inner">
+
+               <!-- new form -->
+               <form action="/auth/login" method="post" class="login">
+                  <div class="field">
+                     <input type="number" name="phone" placeholder="Whattsp number" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="field ">
+                     <label style="padding-right: 100px;">User type :</label>
+                     <select style="border: 1px solid rgb(184, 184, 184); border-radius: 5px;padding: 5px 30px;" >
+                        <option value="admin" >Admin</option>
+                        <option value="user" selected="selected" >User</option>
+                        
+                      </select>
+   
+                     </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="/auth/register">Signup now</a>
+                  </div>
+               </form>
+               <!-- new form -->
+
+
+
+<!-- 
+               <form action="#" method="/auth/login" class="login">
+                  <div class="field">
+                     <input type="number" name="phone" placeholder="Whattsp number" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="field ">
+                     <label style="padding-right: 100px;">User type :</label>
+                     <select style="border: 1px solid rgb(184, 184, 184); border-radius: 5px;padding: 5px 30px;" >
+                        <option value="admin" >Admin</option>
+                        <option value="user" selected="selected" >User</option>
+                        
+                      </select>
+   
+                     </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Signup now</a>
+                  </div>
+               </form> -->
+               <!-- <form action="/auth/register" method="post" enctype="application/x-www-form-urlencoded" class="signup">
+                  <div class="field">
+                     <input type="number" name="phone" placeholder="Whattsp No" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Password" required>
+                   </div>
+                  <div class="field">
+                     <input type="file" name="imgSrc" placeholder="file" readonly>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="epassword" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                    <input type="submit" value="Signup"> 
+                     <button type="submit" value="Signup">
+                        </button>
+                  </div>
+               </form> -->
+            </div>
+         </div>
+      </div>
+      <!-- <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script> -->
+   </body>
+</html>
