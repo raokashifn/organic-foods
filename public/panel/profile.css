@@ -1,0 +1,9 @@
+body{color: rgb(230, 226, 226); background-color: rgb(206, 248, 206);}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20%;
+}
+.main{background-color: rgba(22, 22, 22, 0.8); padding-top: 40px;margin-top: 90px; border-radius: 10px; }
+.input_field{background-color: rgb(34, 43, 35); height: 8vh;border: none; color: white;}
+.input_field:focus{background-color: rgb(34, 43, 35);height: 7vh;border:1px solid white ;color: white;}
