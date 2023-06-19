@@ -1,0 +1,12 @@
+/* Footer Css Start*/
+
+.footer h3 {color: rgb(180, 218, 13);padding-top: 30px;}
+.footer_col{padding: 20px 50px; }
+.background-gray{ background-color: rgb(51, 46, 46); color: white; }
+.footer_ul{margin-top: 30px;}
+.footer_links ul li{ padding-top: 10px;padding-bottom: 10px;}
+.footer_links ul li a{text-decoration-color:rgb(180, 218, 13);color:white;font-weight: bold; }
+
+
+
+/* Footer Css End*/
