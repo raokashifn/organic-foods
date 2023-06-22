@@ -8,6 +8,10 @@ const schema = mongoose.Schema({
     },
     // user: {type:mongoose.Types.ObjectId},
     name: { type: String, required: true },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Seller'
+      },
     price: { type: Number, required: true },
     bulkQty: { type: String, required: true },
     description: { type: String, default: '' },

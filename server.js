@@ -1,5 +1,7 @@
 const express = require('express')
+require('dotenv').config();
 var path = require('path');
+var {isAuth} = require('./utils/util');
 const app = express()
 const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts')
@@ -25,7 +27,8 @@ app.use(expressLayouts)
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cookieParser());
-var upload = require('express-fileupload')
+var upload = require('express-fileupload');
+const { populate } = require('dotenv');
 app.use(upload({
     preserveExtension: true,
     // preserveExtension: 3,
@@ -35,7 +38,10 @@ app.use(upload({
 // mongo connection
 mongoose.connect(
     'mongodb://0.0.0.0:27017/farmer',
+    // 'mongodb+srv://raokashinisar7275:HVXM8i9hju2yydwg@cluster0.2lcughl.mongodb.net/', //compass
+    // 'mongodb+srv://raokashinisar7275:HVXM8i9hju2yydwg@cluster0.2lcughl.mongodb.net/?retryWrites=true&w=majority',
     {
+
         useNewUrlParser: true,
 
         useUnifiedTopology: true
@@ -51,7 +57,8 @@ db.once('open', () => console.log('[+] connected to mongodb'));
 
 app.get('/', async(req,res)=>{
         // products list
-        let products = await ProductModal.find({});
+        let products = await ProductModal.find({}).populate('userId').exec();
+        console.log(products);
         res.render('home/home',{products});
 
 });
@@ -62,16 +69,19 @@ app.get('/blogs', async (req,res)=> {
        res.render('blog/blogs',{blogs});
    });
 
+   app.get('/blogs/:id', isAuth, async (req, res) => {
+    let id = req.params.id;
+    var blog = await BlogModal.findOne({_id:id});
+    res.render('blog/Blogview', { blog })
+});
+
 // app.get('/auth', async (req,res)=> {
 //        res.render('auth/signin');
 //    });
 
  app.use("/auth", sellerRouter);  
 
-app.post('/signin', async (req,res)=> {
-        
-       res.render('auth/signin');
-   });
+
 
 // app.use("/api/auth", authRouter);
 // app.use("/api/auth/seller", sellerRouter);
@@ -87,10 +97,6 @@ app.use("/api/admin/messages", messagesRouter);
 //     res.status(404).render('404');
 //     });
 
-app.get("/profile",function(req,res) {
-    res.render("admin/panel/profile")
-    
-})
 
 app.get("/shop",async function(req,res) {
     let products = await ProductModal.find({});
@@ -100,9 +106,15 @@ app.get("/shop",async function(req,res) {
 
 app.get("/readblog",async function(req,res) {
     let products = await ProductModal.find({});
-    res.render("blog/Blogview",{blog})
+    res.render("blog/Blogview",{blog});
+    
+})
+
+app.get("/ysell",async function(req,res) {
+    
+    res.render("whysell/ysell")
     
 })
 
 
-app.listen(3000,()=>console.log("[+] Server started at PORT 3000" ));
+app.listen(process.env.PORT || 3000,()=>console.log(`[+] Server started at PORT ${process.env.PORT}` ));

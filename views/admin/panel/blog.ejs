@@ -85,7 +85,7 @@
             <% if(admin == true){%>
             
                  <div class="container-fluid px-4">
-                        <div class="row g-3 my-2">
+                        <!-- <div class="row g-3 my-2">
                             <div class="col-md-3">
                                 <div class="p-3 bg_green shadow-sm d-flex justify-content-around align-items-center rounded">
                                     <div class="text_white">
@@ -126,7 +126,7 @@
                                     <i style="font-size: 70px;" class="fas fa-chart-line text_white border rounded-full p-3"></i>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
         
                         <div class="row my-5">
                             <h3 class="fs-4 mb-3 text_green">All Blogs</h3>
@@ -154,10 +154,10 @@
                                                 <th scope="row"><%= index + 1%></th>
                                                 <td><%=blog.title%></td>
                                                 <td><%=blog.intro_text%></td>
-                                                <td><%=blog.description%></td>
+                                                <td><img src="http://localhost:4000/<%=blog.imgSrc%>" height="50" width="50" alt="blog-img" srcset=""></td>
                                                 <td> 
                                                     <form action="/auth/deleteBlog" method="post">
-                                                        <input type="disabled" style="display: none;" name="id"value="<%=blog.id%>" required>
+                                                        <input type="text" style="display: none;" name="id"value="<%=blog.id%>" required>
                                                         <button type="submit" class="btn btn-small bg_green text_white">Delete</button> 
                                                     
                                                     </form>
@@ -196,7 +196,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <form action="/api/admin/blog" method="post">
+                          <form action="/api/admin/blog" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="title">Title</label>
                               <input type="text" class="form-control" name="title" placeholder="Enter title"required>
@@ -211,7 +211,7 @@
                             </div>
                             <div class="form-group">
                               <label for="imgSrc">Image Source</label>
-                              <input type="text" class="form-control" name="imgSrc" placeholder="Enter image source" >
+                              <input type="file" class="form-control" name="imgSrc">
                             </div>
                             <button type="submit" class="btn btn-primary">Create Blog</button>
                           </form>

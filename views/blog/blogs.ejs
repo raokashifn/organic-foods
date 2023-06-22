@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Fruitkha</title>
+	<title>Organic Foods</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
@@ -133,15 +133,16 @@
                     
                     <div class="col-lg-4 col-md-6">
                         <div class="single-latest-news">
-                            <a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
+                            <a href="/blogs/<%=blog.id%>"><img src="http://localhost:4000/<%=blog.imgSrc%>" height="100%" width="100%">
+							</a>
                             <div class="news-text-box">
                                 
-                                <h3><a href="single-news.html"><%= blog.title %></a></h3>
+                                <h3><a href="/blogs/<%=blog.id%>"><%= blog.title %></a></h3>
                                 <p class="blog-meta">
                                     <span class="author"><i class="fas fa-user"></i> Admin</span>
                                     <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                                 </p>
-                                <p class="excerpt"><%= blog.description %></p>
+                                <p class="excerpt"><%= blog.intro_text %></p>
                                 <a href="" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>

@@ -7,10 +7,10 @@ const schema = mongoose.Schema({
         // required: true
     },
     name: { type: String, required: true },
-    phone: { type: String, required: true },
+    phone: { type: Number, unique:true, required: true },
     password: { type: String, required: true },
     description: { type: String, required: true},
-    imgSrc: { type: String, required: true },
+    imgSrc: { type: String, default:'' },
 
 });
 

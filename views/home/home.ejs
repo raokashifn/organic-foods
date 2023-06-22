@@ -72,8 +72,8 @@
 								
 								<li><a href="">Sell</a>
 									<ul class="sub-menu">
-										<li><a href="">why sell here</a></li>
-										<li><a href="/auth">Login</a></li>
+										<!-- <li><a href="">why sell here</a></li> -->
+										<li><a href="/auth/login">Login</a></li>
 								    </ul>
 								</li>
 								<li><a href="/blogs">Blog</a></li>
@@ -102,14 +102,14 @@
 	
 	<div class="hero-area hero-bg">
 		<div class="container">
-		  <div class="row" style="padding-top: 60px; padding-bottom: 100px;">
+		  <div class="row" style="padding-top: 100px; padding-bottom: 100px;">
 			<div class="col-12 col-md-6 maint " >
 			  <div style="margin-top: 200px;">
 				<h4 style="font-family: cursive;  color: white;">Are you Hungry?</h4>
 				<h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;font-size: 5rem; color:#f76f00;">Don't wait!</h1>
 				<h6 style="font-family:'Shizuru', cursive ; color: white;">Let Start to order food now...</h6>
 				<a href="/shop"> <button class="btn btn-large  "
-					style="border: 1px solid rgb(12, 12, 12);border-radius: 15px;background-color: green; color: #e6e0dc;padding: 15px 40px;margin-top: 10px;">
+					style="border: 1px solid rgb(12, 12, 12);border-radius: 15px;background-color: green; color:white;padding: 15px 40px;margin-top: 10px;">
 					Check out Menu</button></a>
 			  </div>
 	  
@@ -180,10 +180,13 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
+		
+				
+			<div class="row media-scroller container ">
+				
 				<%products.forEach((product)=>{%>
-				<div class="col-lg-3 col-md-6 text-center">
+					
+				<div class="col-lg-3 col-md-6 col-sm-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
@@ -192,13 +195,18 @@
 						<h3><%=product.name%></h3>
 						<p class="product-price"><span>Per Kg</span>Rs <%=product.price%>  </p>
 						<p class="product-price"><span>Owner</span> <%=product.sellerName%> </p>
-						<a target="_blank" href="https://api.whatsapp.com/send?phone=+923017275499&	text=Hello%20there!" class="cart-btn"><i class="fas fa-shopping-cart"></i> contact seller</a>
+						<a target="_blank" href="https://api.whatsapp.com/send?phone=+92<%=product.userId['phone']%>&	text=Hello%20there!" class="cart-btn"><i class="fas fa-shopping-cart"></i> contact seller</a>
 					</div>
 				</div>		
 				
 				<%});%>
 				
 			</div>
+		</div>
+	 
+
+
+			
 		</div>
 	</div>
 	<!-- end product section -->

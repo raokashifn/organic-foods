@@ -19,8 +19,12 @@ const isAuth = async (req, res, next) => {
             process.env.JWT_SECRET || 'somesecretkey',
             async (err, decode) => {
                 if (err) {
-                    res.status(200).send({ success: true, message: 'auth successful' });
-                } else {
+                     // next();
+          res.redirect('/auth/login');}
+        //    else if(req.cookies.admin){
+        //             next();
+        //         }
+           else {
                     next();
                 }
             }

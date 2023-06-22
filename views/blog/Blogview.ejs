@@ -16,10 +16,10 @@
     <div class="container">
 
         <div class="main_heading">
-            <h1>Organic Feeders</h1>
+            <h1><%=blog.title%></h1>
             
         </div>
-        <%blogs.forEach((blog)=> {%>
+       
         <div class="mainblog">
             
             <div class="sub_heading">
@@ -31,73 +31,22 @@
             
 
             <p class="blog_text">
-                <%= blog.description %>
+              <span>
+                <p style="text-align: justify;"><%= blog.intro_text %></p>
+              </span>   
 
-
-
-                starting from here
-                Other websites to visit
-                and much more 
                 <div class="img text-center">
-                    <img src="/pexels-lonely-boy-16134577.jpg" height="400px" width="80%">
+                    <img src="http://localhost:4000/<%=blog.imgSrc%>" height="400px" width="80%">
                 </div>
-                Click on the orange RSS icon in the left column and add me to your RSS feeds. You will then be automatically informed of new postings to my Blog.
-                
-                Vegetable Garden - Plan Grow Harvest
-                Easy vegetable garden planning. Using pictures and videos, I'll teach you how to prepare, plant and harvest safe nutritious vegetables for a healthier, more contented family
-                
-                Continue reading "Vegetable Garden - Plan Grow Harvest"
-                Planting a vegetable garden is achievable by anyone - yes even you!
-
-Whether you have a large garden or none there are still ways for you to grow some delicious vegetables.
-
-My aim is to show you how. I`ll bring all the know-how into one easy accessible place where you can access it with just the click of your mouse.
-
-Planting a Vegetable Garden Blog	Planting a Vegetable Garden Blog	Planting a Vegetable Garden Blog
-
-
-
-
-
-Tasks for the month
-Tips, techniques and shortcuts
-Recommendations
-Other websites to visit
-and much more
-Click on the orange RSS icon in the left column and add me to your RSS feeds. You will then be automatically informed of new postings to my Blog.
-
-Vegetable Garden - Plan Grow Harvest
-Easy vegetable garden planning. Using pictures and videos, I'll teach you how to prepare, plant and harvest safe nutritious vegetables for a healthier, more contented family
-
-Continue reading "Vegetable Garden - Plan Grow Harvest"
-Planting a vegetable garden is achievable by anyone - yes even you!
-
-Whether you have a large garden or none there are still ways for you to grow some delicious vegetables.
-
-My aim is to show you how. I`ll bring all the know-how into one easy accessible place where you can access it with just the click of your mouse.
-
-Planting a Vegetable Garden Blog	Planting a Vegetable Garden Blog	Planting a Vegetable Garden Blog
-
-
-
-
-
-Tasks for the month
-Tips, techniques and shortcuts
-Recommendations
-Other websites to visit
-and much more
-Click on the orange RSS icon in the left column and add me to your RSS feeds. You will then be automatically informed of new postings to my Blog.
-
-Vegetable Garden - Plan Grow Harvest
-Easy vegetable garden planning. Using pictures and videos, I'll teach you how to prepare, plant and harvest safe nutritious vegetables for a healthier, more contented family
-
-Continue reading "Vegetable Garden - Plan Grow Harvest"
-            </p>
+              <span>
+                <p style="text-align: justify;"><%=blog.description%></p>
+              </span>    
+              
+              </p>
         </div>
 
 
-        <%})%>
+    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

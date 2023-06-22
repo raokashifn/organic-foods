@@ -1,0 +1,172 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/panel/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="/panel/profile.css" rel="stylesheet">
+    <link rel="stylesheet" href="/panel/font-awesome.css" />
+    <title>seller Panel</title>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg_green" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 text_white fs-4 fw-bold text-uppercase border-bottom"><i
+                    class="fas fa-user-secret me-2"></i>Organic Foods</div>
+            <div class="list-group list-group-flush my-3">
+
+                <a href="/auth/seller-panel/6492f95e0727bbd42b91d041"
+                    class="list-group-item list-group-item-action bg-transparent text_white fw-bold "><i
+                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text_white fw-bold active"><i
+                        class="fas fa-gift me-2"></i>Profile</a>
+
+                <a href="/auth/logout" class="list-group-item list-group-item-action bg-transparent text_white "><i
+                        class="fas fa-power-off me-2"></i>Logout</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left text_green fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0 text_green">Profile</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4">
+
+
+                <div class="container px-5 main">
+                    <div class="row grid-container pb-5">
+                        <h3>Edit profile</h3>
+                        <!-- profile image : implement image -->
+                        <div class="col text-center">
+                            <img src="http://localhost:4000/<%=seller.imgSrc%>" height="150px" width="150px">
+                        </div>
+                    </div>
+
+                    <div class="container-fluid pb-5">
+                        <div class="row pb-3">
+                            <form method="post" action="/auth/editProfileInfo" enctype="multipart/form-data">
+                                <div class=" col-12 col-md-6">
+                                    <!-- <label for="exampleInputEmail1">Name</label>
+                                            <input type="text" class="form-control input_field" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="update name">
+                                              <label for="exampleInputEmail1" class="pt-3">Email address</label>
+                                               <input type="email" class="form-control input_field" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="update email"> -->
+                                    <label for="exampleInputEmail1" class="pt-3">Name</label>
+                                    <input type="text" class="form-control input_field" name="name" id="phone"
+                                        aria-describedby="phone" value="<%=seller.name%>"
+                                        placeholder="<%=seller.name%>">
+                                        <input type="text" style="display: none;" name="id"value="<%=seller.id%>" required>
+                                                       
+                                </div>
+                                <div class="col-12 col-md-6">
+                                   
+                                    <label for="exampleInputEmail1">Description</label>
+                                    <input type="text" class="form-control input_field" name="description"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="<%=seller.description%>" value="<%=seller.description%>" required>
+
+                                    <label for="exampleInputEmail1" class="pt-3 ">update profile image</label>
+                                    <input type="file" class="form-control input_field" name="imgSrc"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        >
+
+                                    <div style="text-align: right;"> <button class="btn btn-success mt-4">
+                                            update</button></div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+
+                    <h3>Change Password</h3>
+                    <div class="container-fluid pb-5">
+                        <div class="row pb-3">
+                            <form method="post" action="/auth/profile">
+                                <div class=" col-12 col-md-6">
+                                    <!-- <label for="exampleInputEmail1">Name</label>
+                                            <input type="text" class="form-control input_field" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="update name">
+                                              <label for="exampleInputEmail1" class="pt-3">Email address</label>
+                                               <input type="email" class="form-control input_field" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="update email"> -->
+                                     <input type="text" style="display: none;" class="form-control input_field" name="sellerId"
+                                        id="" aria-describedby="" value="<%=seller.id%>" placeholder="<%=seller.id%>" autocomplete="false" >
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="exampleInputEmail1">current password</label>
+                                    <input type="password" class="form-control input_field" name="currentPassword"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="current password" required>
+                                    <label for="exampleInputEmail1" class="pt-3 ">new password</label>
+                                    <label for="exampleInputEmail1">password</label>
+                                    <input type="password" class="form-control input_field" name="password"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="new password"
+                                        required>
+                                    <label for="exampleInputEmail1" class="pt-3 ">confirm password</label>
+                                    <input type="password" class="form-control input_field" name="ePassword"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="confirm password" required>
+                                    <div style="text-align: right;"> <button class="btn btn-success mt-4">
+                                            update</button></div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+</body>

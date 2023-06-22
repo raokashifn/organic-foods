@@ -1,5 +1,6 @@
 const express = require('express');
 const BlogModal = require('../modals/blogModal');
+const {isAuth} = require('../utils/util');
 const { saveImage, deleteFile } = require('../utils/file_handler')
 const BlogRouter = express.Router();
 
@@ -24,7 +25,7 @@ BlogRouter.get("/", async (req, res) => {
  */
 
 // post blog
-BlogRouter.post("/", async (req, res) => {
+BlogRouter.post("/", isAuth, async (req, res) => {
    
     let {
         title,
@@ -40,7 +41,6 @@ BlogRouter.post("/", async (req, res) => {
             title: title,
             intro_text: intro_text,
             description: description,
-            imgSrc: "img-link"
             // tags: req.body.tags,
         });
 
